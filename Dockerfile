@@ -30,4 +30,5 @@ RUN pip install --upgrade pip && pip install mkdocs-techdocs-core==1.2.1
 RUN echo $'#!/bin/sh\n\njava -jar '/opt/plantuml.jar' ${@}' >> /usr/local/bin/plantuml
 RUN chmod 755 /usr/local/bin/plantuml
 
+LABEL org.opencontainers.image.source=https://github.com/cariaddxp/techdocs-build
 ENTRYPOINT [ "mkdocs" ]
