@@ -21,4 +21,4 @@ jobs:
       - name: Docker Build techdocs
         run: |
           docker build . -t ghcr.io/cariaddxp/techdocs:latest
-          docker push -a ghcr.io/cariaddxp/techdocs
+          docker push ghcr.io/cariaddxp/techdocs:latest
