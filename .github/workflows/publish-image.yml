@@ -10,12 +10,14 @@ jobs:
     packages: write
     contents: read
   build:
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Log in to registry
-      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
-    - name: Docker Build techdocs
-      run: |
-        docker build . --target techdocs -t ghcr.io/cariaddxp/techdocs:latest
-        docker push -a ghcr.io/cariaddxp/techdocs
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+
+      - name: Docker Build techdocs
+        run: |
+          docker build . --target techdocs -t ghcr.io/cariaddxp/techdocs:latest
+          docker push -a ghcr.io/cariaddxp/techdocs
